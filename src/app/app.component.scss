@@ -1,0 +1,29 @@
+/* Centralizar e adicionar espaçamento à logo */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Espaçamento ao redor de todo o conteúdo */
+  }
+  
+  /* Espaçamento abaixo da logo */
+  .logo img {
+    max-width: 100%; /* Redimensionar logo proporcionalmente */
+    height: auto;
+    margin-bottom: 20px; /* Espaçamento entre logo e botões */
+  }
+  
+  /* Espaçamento entre os botões */
+  .buttons {
+    display: flex;
+    gap: 10px; /* Espaçamento horizontal entre os botões */
+  }
+  
+  /* Adicionar algum espaçamento interno e estilo aos botões */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

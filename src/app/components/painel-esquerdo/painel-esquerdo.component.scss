@@ -1,0 +1,76 @@
+@import 'variaveis';
+
+$h-spotify-logo: 120px;
+$h-menu-opcoes: 150px;
+$m-entre-menus: 20px;
+
+
+:host{
+    max-width: 300px;
+    min-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: $cor-fundo2;
+    box-shadow: 1px 0px 15px #00000012;
+
+     .menus{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px; 
+  gap: 10px;
+  width: 290px;
+  
+  h2 {
+    margin: 10px 0px;
+    color: $preto-transparent-30;
+    font-size: .8rem;
+    text-align: flex-start;
+    font-weight: 700;
+ 
+
+}
+
+  
+
+
+        .image-container{
+            min-height: $h-spotify-logo;
+
+            img{
+                max-width: 80%; /* Redimensionar logo proporcionalmente */
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .menu-container{
+                width: 100%;
+
+                &.flex {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                  }
+
+
+                &.opcoes{
+                    min-width: $h-menu-opcoes; 
+                  //  flex-direction: column;
+                    
+                    *{
+                      margin-bottom: $m-entre-menus;
+                    }
+                    
+                   
+            }
+            
+  }
+
+          
+
+        }
+    }
+}

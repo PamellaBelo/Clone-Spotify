@@ -1,0 +1,44 @@
+<div class = "menus flex">
+<div class = "image-container flex flex-center"> 
+
+<img src="assets/images/spotify-logo.png" alt="Logo" srcset="">
+</div>
+
+<div class="menu-container-flex-opcoes">
+   
+    <app-botao-menu 
+    [selecionado]="menuSelecionado === 'Home'"
+    (click)="botaoClick('Home')">   
+        <fa-icon [icon]="faHome"></fa-icon> Home 
+    </app-botao-menu>
+
+    <app-botao-menu 
+    [selecionado]="menuSelecionado === 'Pesquisar'"
+    (click)="botaoClick('Pesquisar')">  
+        <fa-icon [icon]="faSearch"></fa-icon> Pesquisar
+    </app-botao-menu>
+
+    <app-botao-menu 
+    [selecionado]="menuSelecionado === 'Artistas'"
+    (click)="botaoClick('Artistas')">   
+        <fa-icon [icon]="faGuitar"></fa-icon> Artistas
+    </app-botao-menu>
+   
+    <h2 class="playlist">PLAYLIST</h2>
+
+    <div>
+        <button (click)="botaoClick('playlist.id')"><fa-icon
+            [icon]="faMusic"
+          ></fa-icon> Importar Playlists
+        </button>
+        <ul>
+          <li *ngFor="let item of playlists">
+            {{ item.nome }}
+          </li>
+        </ul>
+      </div>
+</div>
+  </div> 
+<div class="usuario-info">
+
+</div>

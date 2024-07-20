@@ -1,0 +1,13 @@
+<button class="button" 
+[class.selecionado]="selecionado"
+(click)="onClick()"
+>
+<span>{{ descricao}}</span> 
+    <ng-content></ng-content> 
+    <i [class]="icon"></i>
+    <span>{{descricao}}</span>
+  </button>
+  
+
+
+
