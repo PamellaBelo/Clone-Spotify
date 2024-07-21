@@ -4,6 +4,7 @@ import Spotify from 'spotify-web-api-js';
 import { IUsuario } from '../interfaces/IUsuario';
 import { SpotifyPlaylistParaPlaylist, SpotifyUserParaUsuario } from '../common/spotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,12 @@ export class SpotifyService {
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   usuario: IUsuario;
 
-  constructor() { 
+  constructor(private router: Router) {
     this.spotifyApi = new Spotify();
   }
 
   async inicializarServico() {
-    if(!!this.usuario)
+    if (!!this.usuario)
       return true;
 
     const token = localStorage.getItem('token');
@@ -31,7 +32,7 @@ export class SpotifyService {
       this.definirAccessToken(token);
       await this.obterSpotifyUsuario();
       return !!this.usuario;
-    } catch(ex) {
+    } catch (ex) {
       return false;
     }
   }
@@ -39,6 +40,7 @@ export class SpotifyService {
   async obterSpotifyUsuario() {
     const userInfo = await this.spotifyApi.getMe();
     this.usuario = SpotifyUserParaUsuario(userInfo);
+    return this.usuario;
   }
 
   obterUrllogin() {
@@ -51,8 +53,9 @@ export class SpotifyService {
   }
 
   obterTokenUrlCallback() {
-    if(!window.location.hash)
+    if (!window.location.hash)
       return '';
+
 
     const params = window.location.hash.substring(1).split('&');
     return params[0].split('=')[1]
@@ -60,13 +63,28 @@ export class SpotifyService {
 
   definirAccessToken(token: string) {
     this.spotifyApi.setAccessToken(token);
+
     localStorage.setItem('token', token);
+    this.obterSpotifyUsuario();
+    localStorage.setItem('usuario', JSON.stringify(this.usuario));
+
   }
 
-  async buscarPlaylistUsuario(offset = 0, limit = 50): Promise<IPlaylist[]>{
-    const playlist = await  this.spotifyApi.getUserPlaylists(this.usuario.id,{offset,limit});
-    console.log('USUARIO', this.usuario)
+  async buscarPlaylistUsuario(offset = 0, limit = 50): Promise<IPlaylist[]> {
+    const playlist = await this.spotifyApi.getUserPlaylists(this.usuario.id, { offset, limit });
+    console.log('USUARIO', this.usuario);
     return playlist.items.map(SpotifyPlaylistParaPlaylist);
+  }
+
+  // async buscarTopArtistas(limit = 10): Promise<IArtista[]> {
+  //   const artistas = await this.spotifyApi.getMyTopArtists({ limit });
+  //   console.log(artistas)
+  //   return artistas?.items?.map(SpotifyArtistaParaArtista)
+  // }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }

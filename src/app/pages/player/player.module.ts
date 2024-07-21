@@ -8,12 +8,17 @@ import { BotaoMenuComponent } from 'src/app/components/botao-menu/botao-menu.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { HomeComponent } from '../home/home.component';
+import { RodapeUsuarioComponent } from 'src/app/components/rodape-usuario/rodape-usuario.component';
 
 @NgModule({
   declarations: [
     PlayerComponent,
     PainelEsquerdoComponent,
-    BotaoMenuComponent
+    BotaoMenuComponent,
+    HomeComponent,
+    RodapeUsuarioComponent,
+
   ],
   imports: [
     CommonModule,

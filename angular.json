@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "outputPath": "dist/spotify-clone",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -77,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "spotify-clone:build:production"
+              "buildTarget": "spotify-clone:build:production"
             },
             "development": {
-              "browserTarget": "spotify-clone:build:development"
+              "buildTarget": "spotify-clone:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spotify-clone:build"
+            "buildTarget": "spotify-clone:build"
           }
         },
         "test": {
