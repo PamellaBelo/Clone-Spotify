@@ -1,8 +1,67 @@
+
+<!-- home-right.component.html -->
 <div class="minhas-musicas">
-    <span class="titulo-bg mt-4">
-        Seu Top Artista
-    </span>
+    <h1 class="titulo-bg mt-4">Seu Top Artista</h1>
+   
+  
+<app-top-artista class = "mt-2"></app-top-artista>
 
+<h1 class="titulo-bg mt-4">Musicas Curtidas</h1>
 
+<!-- liked-songs.component.html -->
+<div class="liked-songs">
+  <div class="song" *ngFor="let musica of musicas; let i = index" (click) = "executarMusica(musica)">
+    <span class="song-number">{{ i + 1 }}</span>
+    <fa-icon [icon]="faPlay" class="song-play"></fa-icon>
+    <div class="song-info">
+      <span class="musica-titulo">{{ musica.titulo }}</span>
+      <span class="musica-artista">{{obterArtistas(musica) }}</span>
+    </div>
+    <span class="musica.album.nome">{{ musica.album.nome }}</span>
+    <span class="musica.tempo">{{ musica.tempo }}</span>
+  </div>
+  
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table class = "table mt-3"> 
+  <thead>
+    <tr>
+      <th >#</th>
+      <th >Titulo</th>
+      <th > Artista</th>
+      <th > Tempo</th>
+      <th > Album</th>
+
+    </tr> -->
+  <!-- </thead>
+  <tbody>
+    <td>
+      <fa-icon class = "play" [icon]="faPlay"></fa-icon>
+    </td>
+    <tr *ngFor="let musica of musicas">
+      <td class="musica-titulo">{{musica.titulo}}</td>
+      <td>{{obterArtistas(musica)}}</td>
+      <td class="direita">{{musica.tempo}}</td>
+      <td>{{musica.album.nome }}</td>
+    </tr>
+  </tbody>
+</table> -->
+</div>
+
+    <app-painel-direito class="painel-direito"></app-painel-direito>
+  
+
 

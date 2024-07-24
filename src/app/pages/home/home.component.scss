@@ -1,8 +1,10 @@
 @import 'variaveis';
+@import 'table';
 
 :host {
   display: flex; 
   justify-content: space-between;
+  
 
   ::-webkit-scrollbar {
     width: 7px;
@@ -18,11 +20,14 @@
   }
 
   .minhas-musicas {
-    padding: 0px 50px;
+    padding: 16px 50px;
+    font-size: 17px;
     padding-bottom: 20px;
     width: 100%;
     max-height: 100vh;
     overflow-y: scroll;
+    font-weight: bold;
+    
   }
 
   .d-block {
@@ -32,4 +37,6 @@
   .painel-direito {
     height: 100vh;
   }
+  
 }
+  

@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { HomeComponent } from '../home/home.component';
 import { RodapeUsuarioComponent } from 'src/app/components/rodape-usuario/rodape-usuario.component';
+import { TopArtistaComponent } from 'src/app/components/top-artista/top-artista.component';
+import { PainelDireitoComponent } from 'src/app/components/painel-direito/painel-direito.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { RodapeUsuarioComponent } from 'src/app/components/rodape-usuario/rodape
     BotaoMenuComponent,
     HomeComponent,
     RodapeUsuarioComponent,
-
+    TopArtistaComponent,
+    PainelDireitoComponent
   ],
   imports: [
     CommonModule,

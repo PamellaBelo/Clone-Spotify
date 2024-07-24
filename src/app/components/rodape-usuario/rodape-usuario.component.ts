@@ -9,7 +9,8 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   styleUrls: ['./rodape-usuario.component.scss']
 })
 export class RodapeUsuarioComponent implements OnInit {
-  sairIcone = faSignOutAlt;
+  faSignOutAlt = faSignOutAlt;
+  
   usuario: IUsuario = null;
 
   constructor(
@@ -23,5 +24,7 @@ export class RodapeUsuarioComponent implements OnInit {
 
   logout() {
     this.spotifyService.logout();
+    console.log('Logout realizado');
+
   }
 }
