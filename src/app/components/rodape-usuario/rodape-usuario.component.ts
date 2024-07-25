@@ -18,7 +18,6 @@ export class RodapeUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.spotifyService.obterSpotifyUsuario()
     this.usuario = this.spotifyService.usuario;
   }
 

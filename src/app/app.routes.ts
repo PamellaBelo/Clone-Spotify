@@ -16,6 +16,6 @@ export const AppRotas: Routes = [
         path: 'player',
         loadChildren: () => import('./pages/player/player.module')
             .then(c => c.PlayerModule),
-        canMatch: [canMatch]
+        canActivate: [canMatch]
     }
 ]

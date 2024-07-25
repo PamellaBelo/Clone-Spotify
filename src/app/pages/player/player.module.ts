@@ -21,7 +21,7 @@ import { PainelDireitoComponent } from 'src/app/components/painel-direito/painel
     HomeComponent,
     RodapeUsuarioComponent,
     TopArtistaComponent,
-    PainelDireitoComponent
+    PainelDireitoComponent,
   ],
   imports: [
     CommonModule,

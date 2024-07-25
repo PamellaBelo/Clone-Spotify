@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./painel-esquerdo.component.scss']
 })
 export class PainelEsquerdoComponent  {
+irParaPlaylist(arg0: string) {
+throw new Error('Method not implemented.');
+}
 
 
   menuSelecionado = 'Home';

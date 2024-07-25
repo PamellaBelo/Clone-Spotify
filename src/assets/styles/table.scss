@@ -21,7 +21,12 @@
       &:hover {
         background-color:$cor-primaria; /* Cor de fundo ao passar o mouse */
       }
-  
+      &.tocando {
+        background-color: $branco;
+        padding: 10px;
+        box-shadow: 0px 0px 15px $preto-transparent-30;
+        color: $cor-primaria;
+      }
       .song-number {
         text-align: center;
       }
@@ -30,6 +35,9 @@
         cursor: pointer;
         color: #1db954; /* Cor do ícone de play */
       }
+
+      
+      
   
       .song-info {
         display: flex;
@@ -55,77 +63,3 @@
     }
   }
   
-
-// .table{
-//     width: 100%;
-//     text-align: left;
-//     table-layout: fixed;
-//     border-collapse: separate;
-//     transition: background-color 0.3s;
-//     display: flex;
-//     flex-direction: column;
-    
-   
-// .play{
-//     color: $cor-primaria;
-//     font-size: .5rem;
-//     cursor: pointer;
-// }
-  
-// thead th{
-//     font-size: .75rem;
-//     font-weight: 600;
-//     color: $preto-transparent-30;
-   
-// }
-//  th, td{
-//     padding-right: 20px;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//     &:hover {
-//         cursor: pointer;
-//         color: $cor-primaria;
-//          /* Cor de fundo ao passar o mouse */
-//       }
-//     &:nth-child(1){
-//         padding-left: 10px;
-//     }
-//  }
-
-// tr{
-//     &:houver{
-//         cursor: pointer;
-        
-//         td{
-//             color: $cor-primaria;
-//         }
-//     }
-//     td {
-//         padding: 10px 20px 10px 0px;
-//         margin-top: 10px;
-//         font-weight: 500;
-//         font-size: .85rem;
-//         color: $preto-transparent-70;
-
-//   &:nth-child(1){
-//     padding-left: 10px;
-//   }
-//  }
-// }
-// .w{
-//     @for $i from 1 to 10 {
-//       $width: $i * 5;
-//       &-#{ $width } {
-//         width: #{ $width * 1% };
-//       }
-//     }
-//   }
-
-//   .direita {
-//     text-align: right;
-//   }
-//   musica-titulo{
-//     font-weight: 700;
-//   }
-// }

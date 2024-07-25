@@ -1,10 +1,20 @@
 <!-- footer.component.html -->
-<footer class="footer">
-  <div class="user-info">
+
+  <!-- <div class="flex">
     <img [src]="usuario.imagemUrl" alt="" class="user-image">
     <span class="user-name">{{ usuario.nome }}</span>
     <button class="logout-button" (click)="logout()">
       <fa-icon [icon]="faSignOutAlt"></fa-icon> Logout
     </button>
+  </div> -->
+  <div class="flex">
+    <img [src]="usuario.imagemUrl" alt="" srcset="">
+    <span>
+      {{ usuario.nome }}
+    </span>
+    <fa-icon 
+      class="icone" 
+      (click)="logout()"
+      [icon]="faSignOutAlt">
+    </fa-icon>
   </div>
-</footer>

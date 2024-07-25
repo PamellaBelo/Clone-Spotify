@@ -10,9 +10,13 @@
 
 <!-- liked-songs.component.html -->
 <div class="liked-songs">
-  <div class="song" *ngFor="let musica of musicas; let i = index" (click) = "executarMusica(musica)">
+  <div class="song" *ngFor="let musica of musicas; 
+  let i = index" (click) = "executarMusica(musica)"
+  [ngClass]="{'tocando': isTocando(musica)}"
+  >
     <span class="song-number">{{ i + 1 }}</span>
     <fa-icon [icon]="faPlay" class="song-play"></fa-icon>
+
     <div class="song-info">
       <span class="musica-titulo">{{ musica.titulo }}</span>
       <span class="musica-artista">{{obterArtistas(musica) }}</span>
@@ -23,7 +27,9 @@
   
 </div>
 
+</div>
 
+    <app-painel-direito class="painel-direito"></app-painel-direito>
 
 
 
@@ -59,9 +65,7 @@
     </tr>
   </tbody>
 </table> -->
-</div>
 
-    <app-painel-direito class="painel-direito"></app-painel-direito>
   
 
 

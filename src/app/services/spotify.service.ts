@@ -41,11 +41,28 @@ export class SpotifyService {
     }
   }
 
-  async obterSpotifyUsuario() {
-    const userInfo = await this.spotifyApi.getMe();
-    this.usuario = SpotifyUserParaUsuario(userInfo);
+  obterUsuario(): IUsuario {
+    let userLocal = localStorage.getItem('usuario');
+    if (!userLocal) {
+      console.log('usuario nao encontrado');
+      const spotifyUser = this.obterSpotifyUsuario();
+      console.log(spotifyUser);
+    }else{
+      console.log('A variável userLocal tem um valor:', userLocal);
+    }
+
+    this.usuario = JSON.parse(userLocal);
+
     return this.usuario;
   }
+   async obterSpotifyUsuario() {
+    const userInfo = await this.spotifyApi.getMe();
+    let user = SpotifyUserParaUsuario(userInfo);
+    localStorage.setItem('usuario', JSON.stringify(user));
+
+    this.usuario = user;
+
+    return user;}
 
   obterUrllogin() {
     const authEndpoint = `${SpotifyConfiguration.authEndpoint}?`;
@@ -70,13 +87,13 @@ export class SpotifyService {
 
     localStorage.setItem('token', token);
     this.obterSpotifyUsuario();
-    localStorage.setItem('usuario', JSON.stringify(this.usuario));
 
   }
 
   async buscarPlaylistUsuario(offset = 0, limit = 50): Promise<IPlaylist[]> {
-    const playlist = await this.spotifyApi.getUserPlaylists(this.usuario.id, { offset, limit });
-    console.log('USUARIO', this.usuario);
+    const idUser = this.obterUsuario().id.toString();
+
+    const playlist = await this.spotifyApi.getUserPlaylists(idUser, { offset, limit });
     return playlist.items.map(SpotifyPlaylistParaPlaylist);
   }
 

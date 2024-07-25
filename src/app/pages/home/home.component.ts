@@ -14,6 +14,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class HomeComponent implements OnInit, OnDestroy {
   musicas: IMusica[]= []
   musicaAtual: IMusica = newMusica();
+  musicaTocando: any = null;
 
 subs: Subscription[] = [];
 
@@ -42,7 +43,7 @@ this.subs.forEach(sub => sub.unsubscribe());
 obterMusicaAtual(){
  const sub = this.playerService.musicaAtual.subscribe(musica => {
     this.musicaAtual = musica;
-    console.log('musica atualll:',this.musicaAtual);
+  //  console.log('musica atualll:',this.musicaAtual);
   });
 
   this.subs.push(sub);
@@ -55,9 +56,23 @@ return musica.artistas.map(artista => artista.nome).join(',');
 async executarMusica(musica: IMusica){
  await this.spotifyService.executarMusica(musica.id);
  this.playerService.definirMusicaAtual(musica);
+ this.musicaTocando = musica;
+
+
+ }
+//executarMusica(musica: any): void {
+ // this.musicaTocando = musica;
+ // this.playerService.definirMusicaAtual(musica);
+  // Lógica para tocar a música
+//}
+
+isTocando(musica: any): boolean {
+  return this.musicaTocando === musica;
+}
+
 }
 
 
 
 
-}
+
