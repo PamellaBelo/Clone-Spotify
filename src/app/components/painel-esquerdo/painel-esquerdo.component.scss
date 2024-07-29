@@ -1,4 +1,3 @@
-
 @import 'variaveis';
 
 $h-spotify-logo: 120px;
@@ -22,16 +21,6 @@ $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
     flex-direction: column;
     height: 100%;
     padding: 0px 40px 0px 40px;
-
-    h2 {
-         margin: 10px 0px;
-           color: $preto-transparent-30;
-           font-size: .8rem;
-           text-align: flex-start;
-          font-weight: 700;
-       
-      
-       }
 
     .image-container {
       min-height: $h-spotify-logo;
@@ -90,35 +79,4 @@ $h-desconsiderar: calc($h-spotify-logo + $h-menu-opcoes + $h-footer-user);
     height: $h-footer-user;
     width: 100%;
   }
-  button {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-  
-    &.active {
-      background-color: #1db954; // Cor do botão ativo (verde do Spotify)
-      color: white;
-    }
-  }
-  
-  button:hover {
-    background-color: #e0e0e0;
-  }
-  
 }
-//   h2 {
-//     margin: 10px 0px;
-//     color: $preto-transparent-30;
-//     font-size: .8rem;
-//     text-align: flex-start;
-//     font-weight: 700;
- 
-
-// }
-
-  
-
-
-      

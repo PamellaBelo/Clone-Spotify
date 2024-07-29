@@ -1,20 +1,15 @@
-import { Component } from '@angular/core';
-import { faG, faGuitar, faHome, faMusic, faSearch, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { IPlaylist } from '../../interfaces/IPlaylist';
-import { SpotifyService } from '../../services/spotify.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { IPlaylist } from 'src/app/interfaces/IPlaylist';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-painel-esquerdo',
   templateUrl: './painel-esquerdo.component.html',
   styleUrls: ['./painel-esquerdo.component.scss']
 })
-export class PainelEsquerdoComponent  {
-irParaPlaylist(arg0: string) {
-throw new Error('Method not implemented.');
-}
-
-
+export class PainelEsquerdoComponent implements OnInit{
   menuSelecionado = 'Home';
   playlists: IPlaylist[] = [];
 
@@ -38,7 +33,9 @@ throw new Error('Method not implemented.');
   }
 
   async buscarPlaylist() {
-    
     this.playlists = await this.spotifyService.buscarPlaylistUsuario();
   }
 }
+
+
+

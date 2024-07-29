@@ -1,107 +1,42 @@
 <div class="menus flex">
   <div class="image-container flex flex-center">
-
-    <img src="assets/images/spotify-logo.png" alt="" srcset="">
+      <img src="assets/images/spotify-logo.png" alt="Logo Spotify">
   </div>
 
   <div class="menu-container flex opcoes">
-
-    <app-botao-menu
+      <app-botao-menu 
       [selecionado]="menuSelecionado === 'Home'"
-      (click)="botaoClick('Home')"
-    >
-      <fa-icon [icon]="faHome" ></fa-icon> Home
-    </app-botao-menu>
-
-    <app-botao-menu  
+      (click)="botaoClick('Home')">
+          <fa-icon [icon]="faHome"></fa-icon> Home
+      </app-botao-menu>
+      <app-botao-menu 
       [selecionado]="menuSelecionado === 'Pesquisar'"
-      (click)="botaoClick('Pesquisar')"
-    >
-      <fa-icon [icon]="faMusic" ></fa-icon> Pesquisar
-    </app-botao-menu>
-
-    <app-botao-menu 
+      (click)="botaoClick('Pesquisar')">
+          <fa-icon [icon]="faGuitar"></fa-icon> Pesquisar
+      </app-botao-menu>
+      <app-botao-menu 
       [selecionado]="menuSelecionado === 'Artistas'"
-      (click)="botaoClick('Artistas')"
-    >
-      <fa-icon [icon]="faGuitar" ></fa-icon> Artistas
-    </app-botao-menu>
-
+      (click)="botaoClick('Artistas')">
+          <fa-icon [icon]="faGuitar"></fa-icon> Artistas
+      </app-botao-menu>
   </div>
 
   <div class="menu-container flex">
-    <span class="playlist-titulo">
-      PLAYLISTS
-    </span>
+      <span class="playlist-titulo">
+          PLAYLISTS
+      </span>
 
-    <div class="playlist-scroll">
-      <app-botao-menu
-        *ngFor="let playlist of playlists"
-        [descricao]="playlist.nome"
-        [selecionado]="menuSelecionado === playlist.id"
-        (click)="irParaPlaylist(playlist.id)"
-        > 
-        <fa-icon
-          [icon]="faMusic"
-        ></fa-icon>
-      </app-botao-menu>
-      
-    </div>
-
-  </div>
-
-</div>
-
-<div class="usuario-info">
-  <app-rodape-usuario></app-rodape-usuario>
-</div>
-
-
-
-
-
-
-<!-- <div class = "menus flex">
-<div class = "image-container flex flex-center"> 
-
-<img src="assets/images/spotify-logo.png" alt="Logo" srcset="">
-</div>
-
-<div class="menu-container-flex-opcoes">
-   
-    <app-botao-menu 
-    [selecionado]="menuSelecionado === 'Home'"
-    (click)="botaoClick('Home')">   
-        <fa-icon [icon]="faHome"></fa-icon> Home 
-    </app-botao-menu>
-
-    <app-botao-menu 
-    [selecionado]="menuSelecionado === 'Pesquisar'"
-    (click)="botaoClick('Pesquisar')">  
-        <fa-icon [icon]="faSearch"></fa-icon> Pesquisar
-    </app-botao-menu>
-
-    <app-botao-menu 
-    [selecionado]="menuSelecionado === 'Artistas'"
-    (click)="botaoClick('Artistas')">   
-        <fa-icon [icon]="faGuitar"></fa-icon> Artistas
-    </app-botao-menu>
-   
-    <h2 class="playlist">PLAYLIST</h2>
-
-    <div>
-        <button (click)="botaoClick('playlist.id')"><fa-icon
-            [icon]="faMusic"
-          ></fa-icon> Importar Playlists
-        </button>
-        <ul>
-          <li *ngFor="let item of playlists">
-            {{ item.nome }}
-          </li>
-        </ul>
+      <div class="playlist-scroll">
+          <app-botao-menu *ngFor="let playlist of playlists" [descricao]="playlist.nome"
+          [selecionado]="menuSelecionado === playlist.id" (click)="botaoClick(playlist.id)">
+              <fa-icon [icon]="faMusic"></fa-icon>
+          </app-botao-menu>
       </div>
+  </div>
 </div>
-  </div> 
 <div class="usuario-info">
   <app-rodape-usuario></app-rodape-usuario>
-</div> -->
+</div>
+
+
+

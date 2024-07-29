@@ -1,56 +1,43 @@
 @import 'variaveis';
 
 
-button {
-    width: 100%;
-    border: 0;
-
-    background-color: transparent;
-    height: 50px;
-    margin-bottom: 10px; //distancia dos botoes
-    text-align: left; //para o texto acompanhar o icone 
-    font-weight: 700; //para engrossar a letra
-    border-radius: 5px; //deixar arrendodado
-    padding: 10px 0px 10px 20px;
-    font-size: .8rem;
-    cursor: pointer;
-
-    span{
-      display: inline-block;
-      vertical-align: middle;
-      //width: 150px;
-      white-space: nowrap;
-      margin-left: 15px;
-      overflow: hidden;
-      text-overflow: ellipsis;//...
+  
+    button {
+      width: 100%;
+      border: 0;
+      padding: 10px 0px 10px 20px;
+      margin-bottom: 10px; //distancia dos botoes
+      height: 50px;
+      border-radius: 5px; // deixar arrendodado
+      text-align: left; //para o texto acompanhar o icone
+      font-weight: 600; //para engrosaar a letra
+      font-size: .8rem;
+      cursor: pointer;
+      margin-right: 10px;// Espaço entre o icone e o texto //
+      
+  
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        white-space: nowrap;
+        margin-left: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+  
+      color:$cor-primaria;
+      background-color: transparent;
+  
+      &.selecionado {
+        background-color: $cor-primaria;
+        color: $branco;
+      }
     }
+  
 
-    color:$cor-primaria;
-    background-color: transparent;
 
-&.selecionado{
-  background-color: $cor-primaria;
-  color: $branco;
-}
 
-}
- 
-  
-  
-  
-  
-  
-  
-  
-  //width: 100%;
-   // border: 0;
-    //padding: 10px 0px 10px 20px;
-    //border-radius: 5px;
-    //text-align: left;
-    //font-weight: 600;
-    //font-size: .8rem;
-    //cursor: pointer;
-  
   
    
   

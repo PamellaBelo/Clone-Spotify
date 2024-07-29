@@ -12,6 +12,9 @@ import { IMusica } from '../interfaces/IMusica';
   providedIn: 'root'
 })
 export class SpotifyService {
+  getPlaylists() {
+    throw new Error('Method not implemented.');
+  }
 
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   usuario: IUsuario;
