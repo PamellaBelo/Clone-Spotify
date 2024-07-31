@@ -1,1 +1,16 @@
-<p>buscas-recentes works!</p>
+<input
+  type="text"
+  [(ngModel)]="campoPesquisa"
+  placeholder="Artistas, Músicas, Playlists..."
+  (keyup.Enter)="buscar()"
+
+>
+<div class="sugestoes flex">
+  <span
+  (click)="definirPesquisa(pesquisa)"
+    *ngFor="let pesquisa of pesquisasRecentes" 
+ 
+  >
+    {{ pesquisa }}
+  </span>
+</div>

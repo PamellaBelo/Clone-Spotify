@@ -1,0 +1,9 @@
+@import 'variaveis';
+
+.d-block{
+    display: block;
+
+    &:hover {
+        background-color: $cor-primaria;
+      }
+}

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { newMusica } from 'src/app/common/factories';
 import { IMusica } from 'src/app/interfaces/IMusica';
@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 subs: Subscription[] = [];
 
   faPlay = faPlay; // icone play
+  faPause = faPause;
+
 
 
 constructor(
@@ -57,7 +59,6 @@ async executarMusica(musica: IMusica){
  await this.spotifyService.executarMusica(musica.id);
  this.playerService.definirMusicaAtual(musica);
  this.musicaTocando = musica;
-
 
  }
 //executarMusica(musica: any): void {

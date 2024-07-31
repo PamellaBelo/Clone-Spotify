@@ -115,13 +115,33 @@ return musicas.items.map( x=> SpotifyTrackParaMusica(x.track));
 async executarMusica(musicaId: string){
 await this.spotifyApi.queue(musicaId);
 await this.spotifyApi.skipToNext();
-await this.spotifyApi.search
+  this.spotifyApi.search
 }
 
 async obterMusicaAtual(): Promise<IMusica>{
   const musicaSpotify = await this.spotifyApi.getMyCurrentPlayingTrack();
   return SpotifyTrackParaMusica(musicaSpotify.item);
 }
+
+async voltarMusica(){
+  this.spotifyApi.skipToPrevious();
+}
+async proximaMusica(){
+  await this.spotifyApi.skipToNext();
+}
+
+// async alternarPlayPause(){
+//   this.spotifyApi.play();
+//   this.spotifyApi.pause();
+// }
+
+async playMusica(){
+  await this.spotifyApi.play();
+}
+async pauseMusica(){
+  await this.spotifyApi.pause();
+}
+
 
   logout() {
     localStorage.clear();

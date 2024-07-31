@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
-@import 'variaveis';
+@import 'variaveis.scss';
 
 html, body {
-    margin: 0;
-    padding: 0;
-    background-color: $cor-fundo;
+  margin: 0;
+  padding: 0;
+  background-color: $cor-fundo;
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 .flex {
@@ -26,7 +26,7 @@ html, body {
   display: block;
   font-weight: 700;
 
-  &-bg {
+  &-bg{
     @extend .titulo;
     font-size: 2.2rem;
   }
@@ -37,7 +37,7 @@ html, body {
   }
 }
 
-.mt-4 {
+.mt{
   @for $i from 1 to 10 {
     &-#{ $i } {
       margin-top: #{ $i }vh;
@@ -50,9 +50,16 @@ html, body {
 }
 
 .card {
-  box-shadow: 0px 0px 15px $preto-transparent-4;
+  box-shadow: 0px 0px 15px $preto-transparent-03;
   background-color: $branco;
   border-radius: 10px;
 }
+
+
+
+
+
+
+
 
 

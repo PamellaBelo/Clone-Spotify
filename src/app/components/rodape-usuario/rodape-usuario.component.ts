@@ -23,7 +23,6 @@ export class RodapeUsuarioComponent implements OnInit {
 
   logout() {
     this.spotifyService.logout();
-    console.log('Logout realizado');
 
   }
 }

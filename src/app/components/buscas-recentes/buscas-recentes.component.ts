@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class BuscasRecentesComponent {
 
+pesquisasRecentes = [
+  'Top Brasil', 'Top Global', 'Esquenta Sertanejo', 'Pagodeira'
+]
+
+campoPesquisa = '';
+
+definirPesquisa(Pesquisa: string){
+this.campoPesquisa= Pesquisa;
+}
+
+buscar(){
+  console.log('Buscando...', this.campoPesquisa);//finalizar depois
+}
 }

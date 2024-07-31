@@ -1,0 +1,37 @@
+
+
+<div class="container card p-10">
+    <div class="image" [style.background-image]="'url(' + musica.album.imagemUrl + ')'" ></div>
+    <div class="controles">
+      <span> {{musica.titulo }} </span>
+      <div class="botoes">
+        <fa-icon 
+          [icon]="faStepBackward" 
+          (click)="voltarMusica()"
+          >
+        </fa-icon>
+
+        <fa-icon 
+        [icon]="faPause" 
+        (click)="pauseMusica()"
+    
+        >
+        
+      </fa-icon>
+
+      <fa-icon 
+        [icon]="faPlay" 
+        (click)="playMusica()"
+    
+        >
+        
+      </fa-icon>
+        <fa-icon 
+          [icon]="faStepForward"
+          (click)="proximaMusica()"
+          >
+        </fa-icon>
+      </div>
+    </div>
+  </div>
+

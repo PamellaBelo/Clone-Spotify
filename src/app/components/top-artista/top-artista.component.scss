@@ -23,7 +23,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-position: center;
+    background-position:20% 20%;
     background-size: cover;
     background-repeat: no-repeat;
     opacity: .4;
@@ -35,28 +35,8 @@
         text-shadow: 2px 2px 10px $branco;
     }
 
-    .play-button {
-  background-color: #37AB00; /* Cor de fundo do botão */
-  color: $branco; /* Cor do ícone */
-  border: none;
-  border-radius: 30px;
-  width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  padding: 10px 0px 10px 20px;
-
-
-  &:hover {
-    background-color: #213617; /* Cor de fundo do botão ao passar o mouse */
-  }
-
-  fa-icon {
-    font-size: 24px;
-  }
+    
 }
-}
+
 
    
