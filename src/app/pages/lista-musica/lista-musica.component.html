@@ -1,0 +1,32 @@
+
+ <div class="minhas-musicas">
+    <app-banner [ImagemUrl]="bannerImagemUrl" [Text]="bannerTexto"></app-banner>
+   
+
+<div class="titulo-bg mt-7">
+    {{ title }}
+</div>
+
+<div class="liked-songs">
+  <div class="song" *ngFor="let musica of musicas; 
+  let i = index" (click) = "executarMusica(musica)"
+  [ngClass]="{'tocando': isTocando(musica)}"
+  >
+  
+     <span class="song-number">{{ i + 1 }}</span>
+    
+     <fa-icon [icon]="faPlay" class="song-play"></fa-icon> 
+
+    <div class="song-info">
+      <span class="musica-titulo">{{ musica.titulo }}</span>
+      <span class="musica-artista">{{obterArtistas(musica) }}</span>
+    </div>
+    <span class="musica.album.nome">{{ musica.album.nome }}</span>
+    <span class="musica.tempo">{{ musica.tempo }}</span>
+  </div>
+  
+</div>
+
+</div>  
+
+    <app-painel-direito class="painel-direito"></app-painel-direito> 

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   musicaAtual: IMusica = newMusica();
   musicaTocando: any = null;
 
+
 subs: Subscription[] = [];
 
   faPlay = faPlay; // icone play
@@ -71,9 +72,7 @@ isTocando(musica: any): boolean {
   return this.musicaTocando === musica;
 }
 
+
+
+
 }
-
-
-
-
-
