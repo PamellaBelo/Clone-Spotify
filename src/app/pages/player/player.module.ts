@@ -33,6 +33,7 @@ import { BannerComponent } from 'src/app/components/banner/banner.component';
     TopArtistasComponent,
     ArtistaItemImagemComponent,
     PlayerCardComponent,
+
     ListaMusicaComponent,
     BannerComponent
     

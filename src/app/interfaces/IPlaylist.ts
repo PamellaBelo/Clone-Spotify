@@ -6,5 +6,4 @@ export interface IPlaylist{
     imagemUrl: string,
     musicas?: IMusica[]
 
-
 }
