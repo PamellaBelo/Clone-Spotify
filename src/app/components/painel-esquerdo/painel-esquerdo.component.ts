@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@anglar/core';
 import { Router } from '@angular/router';
 import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { IPlaylist } from 'src/app/interfaces/IPlaylist';
