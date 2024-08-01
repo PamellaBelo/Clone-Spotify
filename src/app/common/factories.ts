@@ -7,6 +7,7 @@ export function newArtista(): IArtista{
     id: '',
     imagemUrl: '',
     nome: '',
+    musicas: []
    } ;
 }
 export function newMusica(): IMusica {
@@ -28,6 +29,6 @@ export function newMusica(): IMusica {
      id: '',
      imagemUrl: '',
      nome: '',
-    // musicas: []
+     musicas: []
    }
  }
